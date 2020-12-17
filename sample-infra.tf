@@ -161,7 +161,7 @@ resource "aws_instance" "nginx_server_01" {
             "sleep 1",
             "cd /etc/nginx/nodeapp",
             "sudo docker build . -t nodeapp:latest",
-            "sudo docker run --name nodeapp -v /etc/resource.log:/etc/resource.log -p 3000:3000 -d nodeapp",
+            "sudo docker run --name nodeapp -v /etc/resource.log:/etc/resource.log -p 3000:3000 -d nodeapp --restart always",
             "sudo docker network create appnetwork --opt com.docker.network.bridge.name=br_app_access",
             "sudo docker network connect appnetwork nginx",
             "sudo docker network connect appnetwork nodeapp",

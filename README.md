@@ -20,6 +20,11 @@ The infrastructure on AWS has the below components.
 * A simple REST API app with NodeJS and Express.
     * This application serves the file `/etc/resource.log` created by the above health check script on `<ec2_public_ipv4_dns>/logs` via the nginx proxy.
 
+### Security
+
+* The application is hosted inside a VPC in AWS.
+* The EC2 security group can be locked down so that it can only be accessed from specific IP CIDRs. Check the `ingress_cidr` terraform variable that you can set.
+* Firewalld has been installed on EC2 instance to improve security.
 ## How to deploy
 
 ### Pre-requisites
@@ -30,8 +35,9 @@ The infrastructure on AWS has the below components.
 * A AWS private key(*.pem) downloaded.
 
 ### Deploy Steps
-
-* From the project root directory run `terraform apply`. This start the deploy and should ask you to input the required variables.
+* Run `terraform -v` to make sure that terraform is installed.
+* From the project root directory run `terraform init` to initializing provider plugins.
+* Now run `terraform apply`. This start the deploy and should ask you to input the required variables.
     * You can provide the values according to the prompts or provide variables on command line or create a file with `.tfvars` extension. [Offical Guide](https://www.terraform.io/docs/configuration/variables.html#variables-on-the-command-line)
     ``` bash
     $ terraform apply -var-file secrets.tfvars # OR
