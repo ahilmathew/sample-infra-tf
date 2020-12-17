@@ -81,6 +81,7 @@ The below table shows the variables you should set/can override.
 * Write a full fleged text file parser to serve the data via REST API instead of executing commands on the host machine.
 * Host the EC2 instance on private subnet and allow access to the external world via a application load balancer.
 * Host EC2 instances on different availability zones to ensure High Availability.
+* Build a pipeline to deploy this.
 
 # Sample Output from the REST API
 
