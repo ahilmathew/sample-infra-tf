@@ -36,7 +36,7 @@ The infrastructure on AWS has the below components.
 
 ### Deploy Steps
 * Run `terraform -v` to make sure that terraform is installed.
-* From the project root directory run `terraform init` to initializing provider plugins.
+* From the project root directory run `terraform init` to initialize provider plugins.
 * Now run `terraform apply`. This start the deploy and should ask you to input the required variables.
     * You can provide the values according to the prompts or provide variables on command line or create a file with `.tfvars` extension. [Offical Guide](https://www.terraform.io/docs/configuration/variables.html#variables-on-the-command-line)
     ``` bash
