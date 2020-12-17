@@ -1,7 +1,7 @@
 # Infra Setup with Terraform
 
-This code base sets up an infrastructure on AWS using Terraform. As part of the deploy, Nginx is also deployed and configured on the EC2 instance.
-This code base also deploys a NodeJS-Express application that delivers the health check and resource usage of the `nginx` docker container via REST API.
+This code base sets up an infrastructure on AWS using Terraform. Nginx is also deployed as a docker container and configured on the EC2 instance.
+This code base also deploys a NodeJS-Express application docker container that delivers the health check and resource usage of the `nginx` docker container via REST API.
 
 ### Infrastructure Components
 The infrastructure on AWS has the below components.
